@@ -49,7 +49,7 @@ export default function Contact() {
           <motion.div className="flex flex-col gap-3 sm:items-end shrink-0" {...fadeUp(0.2)}>
             <Link
               href="mailto:ed75hyeok@gmail.com"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
             >
               Email Me
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -58,7 +58,7 @@ export default function Contact() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-6 py-3.5 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-zinc-700 px-6 py-3.5 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
             >
               Contact Form
             </Link>

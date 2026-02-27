@@ -35,11 +35,13 @@ export default function Hero() {
             />
           */}
 
-          {/* 이미지 플레이스홀더 */}
-          <div className="absolute inset-0 flex items-start justify-center pt-24 text-zinc-300 text-sm select-none">
-            프로필 사진 추가 필요
-          </div>
+          {/* Monogram placeholder */}
           <div className="absolute inset-0 rounded-b-full bg-zinc-100/60" />
+          <div className="absolute inset-x-0 top-[18%] flex justify-center select-none">
+            <div className="flex h-36 w-36 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-zinc-200">
+              <span className="text-5xl font-semibold tracking-tight text-zinc-300">KL</span>
+            </div>
+          </div>
 
           {/* Bottom gradient — 이미지가 흰 배경으로 자연스럽게 페이드 */}
           <div className="absolute bottom-0 inset-x-0 h-[65%] bg-gradient-to-t from-white via-white/80 to-transparent" />
