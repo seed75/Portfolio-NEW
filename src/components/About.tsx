@@ -4,9 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "N+", label: "Years of experience" },
-  { value: "N+", label: "Projects completed" },
-  { value: "N+", label: "Happy clients" },
+  { value: "< 1yr", label: "Years of experience" },
+  { value: "7", label: "Projects completed" },
+  { value: "2", label: "Happy users" },
 ];
 
 const stacks = [
@@ -34,21 +34,22 @@ export default function About() {
               About Me
             </span>
             <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
-              I create strategic and visually compelling digital experiences
+              Recent grad. Full-stack developer.{" "}
+              <em className="font-normal italic text-zinc-400">Ready to build.</em>
             </h2>
           </motion.div>
 
           <motion.div className="flex flex-col gap-4 text-base leading-relaxed text-zinc-500" {...fadeUp(0.1)}>
             <p>
-              As a frontend developer with a strong focus on UI/UX, my focus is
-              on creating intuitive user interfaces, seamless interactions, and
-              cohesive digital experiences that drive engagement and enhance
-              usability.
+              I&apos;m a recent graduate with hands-on experience across the full
+              stack — building React and Next.js frontends, Node.js backends and
+              everything in between. I take the user experience seriously at
+              every layer of the stack.
             </p>
             <p>
-              Whether it&apos;s designing SaaS dashboards, mobile apps, or
-              high-performance websites, my approach combines creativity with a
-              deep understanding of user needs and business goals.
+              I&apos;m looking for a junior or entry-level role where I can
+              contribute from day one, grow alongside a team and work on
+              products that real people use.
             </p>
           </motion.div>
 

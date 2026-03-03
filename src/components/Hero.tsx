@@ -12,39 +12,30 @@ const fadeUp = (delay: number) => ({
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-white">
+    <section className="relative min-h-screen overflow-hidden bg-zinc-950">
 
-      {/* ── Center profile image ──────────────────────────────────────── */}
+      {/* ── Silhouette image — bleeds from top, fades into dark bg ───────── */}
       <motion.div
-        className="absolute inset-x-0 top-0 flex justify-center"
+        className="absolute inset-x-0 top-0 flex justify-center pointer-events-none"
         initial={{ opacity: 0, scale: 1.04 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        transition={{ duration: 1.1, ease: "easeOut" }}
       >
-        <div className="relative h-screen w-[460px] max-w-[55vw]">
-          {/*
-            TODO: /public/profile.jpg 에 본인 사진을 추가하고 아래 Image 주석을 해제하세요.
-            사진은 배경 제거(Remove.bg 등)된 인물 사진이 가장 잘 어울립니다.
+        <div className="relative h-screen w-[600px] max-w-[75vw]">
+          <Image
+            src="/hero-silhouette.jpg"
+            alt="Kanghyeok Lee"
+            fill
+            className="object-cover object-[55%_center]"
+            priority
+          />
 
-            <Image
-              src="/profile.jpg"
-              alt="Profile"
-              fill
-              className="object-cover object-top"
-              priority
-            />
-          */}
+          {/* Side fades — blend black photo edges into section bg */}
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-zinc-950 to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-zinc-950 to-transparent" />
 
-          {/* Monogram placeholder */}
-          <div className="absolute inset-0 rounded-b-full bg-zinc-100/60" />
-          <div className="absolute inset-x-0 top-[18%] flex justify-center select-none">
-            <div className="flex h-36 w-36 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-zinc-200">
-              <span className="text-5xl font-semibold tracking-tight text-zinc-300">KL</span>
-            </div>
-          </div>
-
-          {/* Bottom gradient — 이미지가 흰 배경으로 자연스럽게 페이드 */}
-          <div className="absolute bottom-0 inset-x-0 h-[65%] bg-gradient-to-t from-white via-white/80 to-transparent" />
+          {/* Bottom fade — text content sits above this */}
+          <div className="absolute bottom-0 inset-x-0 h-[55%] bg-gradient-to-t from-zinc-950 via-zinc-950/75 to-transparent" />
         </div>
       </motion.div>
 
@@ -63,39 +54,38 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
-              <span className="text-sm text-zinc-500">
-                Available for new projects {/* TODO: 상태에 맞게 변경 */}
+              <span className="text-sm text-zinc-400">
+                Open to Junior / Entry-level Roles
               </span>
             </motion.div>
 
             {/* Heading */}
             <motion.h1
-              className="text-[clamp(2.4rem,5vw,4rem)] font-bold leading-[1.08] tracking-tight text-zinc-900"
+              className="text-[clamp(2.4rem,5vw,4rem)] font-bold leading-[1.08] tracking-tight text-white"
               {...fadeUp(0.42)}
             >
-              Crafting seamless<br />
-              digital experiences<br />
-              through design & code
-              {/* TODO: 본인의 강점 문장으로 수정 */}
+              Where clean code<br />
+              meets <em className="font-normal italic text-zinc-400">thoughtful</em><br />
+              design
             </motion.h1>
           </div>
 
           {/* Right: bio + CTA */}
           <div className="hidden sm:flex flex-col items-start gap-5 max-w-[300px] shrink-0">
             <motion.p
-              className="text-base leading-relaxed text-zinc-500"
+              className="text-base leading-relaxed text-zinc-400"
               {...fadeUp(0.55)}
             >
-              As a frontend developer with a strong focus on UI/UX, I collaborate
-              closely with teams to craft seamless, user-centered experiences.
-              A reliable partner in bringing ideas to life.
-              {/* TODO: 본인 소개문으로 수정 */}
+              Full-stack developer with a strong sense of design.
+              I build end-to-end web apps using React, Next.js and Node.js
+              and I take the user experience seriously at every layer.
+              Actively seeking a junior role where real-world experience comes first.
             </motion.p>
 
             <motion.div {...fadeUp(0.68)}>
               <Link
                 href="mailto:ed75hyeok@gmail.com"
-                className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-zinc-700"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-200"
               >
                 Email Me
                 <svg
@@ -121,16 +111,17 @@ export default function Hero() {
         {/* Mobile: bio + button below heading */}
         <div className="mx-auto max-w-7xl mt-6 flex flex-col gap-4 sm:hidden">
           <motion.p
-            className="text-base leading-relaxed text-zinc-500"
+            className="text-base leading-relaxed text-zinc-400"
             {...fadeUp(0.55)}
           >
-            As a frontend developer with a strong focus on UI/UX, I collaborate
-            closely with teams to craft seamless, user-centered experiences.
+            Full-stack developer with a strong sense of design.
+            Building end-to-end web apps and actively seeking a junior role
+            where real-world experience comes first.
           </motion.p>
           <motion.div {...fadeUp(0.65)}>
             <Link
               href="mailto:ed75hyeok@gmail.com"
-              className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3.5 text-sm font-medium text-white"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-zinc-900"
             >
               Email Me
             </Link>

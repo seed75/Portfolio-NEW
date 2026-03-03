@@ -1,72 +1,61 @@
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
-// skill.md → Work Experience 섹션 참조
 const experiences = [
   {
-    role: "[직책]",           // TODO: 예) "Frontend Developer"
-    company: "[회사명]",      // TODO: 예) "ABC Corp."
-    period: "20XX – Present",
-    desc: "주요 담당 업무 및 성과를 작성하세요.", // TODO
+    role: "Manager",
+    company: "Tokuya Restaurant",
+    period: "2022 – Present",
+    desc: "Oversaw day-to-day restaurant operations including staff scheduling, inventory management, and customer service. Coordinated front-of-house and kitchen teams to maintain service quality during peak periods.",
   },
   {
-    role: "[직책]",
-    company: "[회사명]",
-    period: "20XX – 20XX",
-    desc: "주요 담당 업무 및 성과를 작성하세요.",
-  },
-  {
-    role: "[직책]",
-    company: "[회사명]",
-    period: "20XX – 20XX",
-    desc: "주요 담당 업무 및 성과를 작성하세요.",
+    role: "Sergeant",
+    company: "Republic of Korea Army",
+    period: "2014 – 2016",
+    desc: "Completed mandatory military service. Responsibilities included unit operations, personnel coordination, and maintaining discipline and readiness within the team.",
   },
 ];
 
-// skill.md → Tech Stack 섹션 참조
 const stackGroups = [
   {
     category: "Design Tools",
     items: [
-      { name: "Figma", desc: "UI/UX 디자인 및 디자인 시스템 구축" },
-      { name: "Framer", desc: "인터랙티브 웹사이트 제작" },
-      { name: "Illustrator", desc: "벡터 그래픽 및 브랜드 에셋" },
-      { name: "Photoshop", desc: "이미지 편집 및 비주얼 컴포지션" },
+      { name: "Framer", desc: "Interactive website design & prototyping" },
+      { name: "Illustrator", desc: "Vector graphics and brand assets" },
+      { name: "Photoshop", desc: "Image editing and visual composition" },
     ],
   },
   {
     category: "Frontend",
     items: [
-      { name: "React", desc: "컴포넌트 기반 UI 라이브러리" },
-      { name: "Next.js", desc: "프로덕션급 React 프레임워크" },
-      { name: "TypeScript", desc: "확장 가능한 타입 안전 코드" },
-      { name: "Tailwind CSS", desc: "유틸리티 퍼스트 CSS 프레임워크" },
+      { name: "React", desc: "Component-based UI library" },
+      { name: "Next.js", desc: "Production-grade React framework" },
+      { name: "TypeScript", desc: "Scalable, type-safe codebases" },
+      { name: "Tailwind CSS", desc: "Utility-first CSS framework" },
     ],
   },
   {
     category: "Backend & Infra",
     items: [
-      { name: "Node.js", desc: "서버사이드 JavaScript 런타임" },
-      { name: "Supabase", desc: "인증, 데이터베이스, 스토리지" },
-      { name: "Vercel", desc: "프론트엔드 배포 플랫폼" },
-      { name: "Git / GitHub", desc: "버전 관리 및 협업" },
+      { name: "Node.js", desc: "Server-side JavaScript runtime" },
+      { name: "Supabase", desc: "Auth, database, and storage" },
+      { name: "Vercel", desc: "Frontend deployment platform" },
+      { name: "Git / GitHub", desc: "Version control and collaboration" },
     ],
   },
   {
     category: "Collaboration",
     items: [
-      { name: "Notion", desc: "프로젝트 관리 및 문서화" },
-      { name: "Slack", desc: "팀 커뮤니케이션" },
-      { name: "Linear", desc: "이슈 트래킹" },
+      { name: "Notion", desc: "Project management and documentation" },
+      { name: "Slack", desc: "Team communication" },
+      { name: "Linear", desc: "Issue tracking for fast-moving teams" },
     ],
   },
 ];
 
-// skill.md → Education & Certifications 참조
 const education = [
-  { type: "학력", content: "[학교명] — [전공]", period: "20XX – 20XX" }, // TODO
-  { type: "자격증", content: "[자격증명]", period: "20XX" },              // TODO
-  { type: "수료", content: "[부트캠프 / 코스명]", period: "20XX" },       // TODO
+  { type: "Education", content: "Victoria University Sydney — Bachelor of Information Technology", period: "2022 – 2025" },
+  { type: "Education", content: "University of South Australia — Bachelor of Aviation", period: "2017 – 2019" },
 ];
 
 export default function AboutPage() {
@@ -82,30 +71,30 @@ export default function AboutPage() {
             About
           </span>
           <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
-            I create strategic and visually{" "}
-            <em className="font-normal italic text-zinc-400">compelling</em>{" "}
-            digital experiences
+            Full-stack developer with a strong sense of{" "}
+            <em className="font-normal italic text-zinc-400">design</em>{" "}
+            and a drive to build
           </h1>
         </div>
 
         {/* ── Bio ────────────────────────────────────────────────────── */}
         <div className="mb-20 flex flex-col gap-5 max-w-2xl text-base leading-relaxed text-zinc-500">
           <p>
-            As a frontend developer with a strong focus on UI/UX, my focus is on
-            creating intuitive user interfaces, seamless interactions, and cohesive
-            digital experiences that drive engagement and enhance usability.
+            I&apos;m a recent graduate and full-stack developer with experience
+            building web applications end-to-end from responsive React and
+            Next.js frontends to Node.js backends and database integrations
+            with Supabase and Firebase.
           </p>
           <p>
-            Whether it&apos;s designing SaaS dashboards, mobile apps, or
-            high-performance websites, my approach combines creativity with a deep
-            understanding of user needs and business goals.
+            What sets me apart is that I care as much about how things look
+            and feel as how they work. I approach every project with both
+            an engineering mindset and an eye for clean, user-centered design.
           </p>
           <p>
-            Over the years, I&apos;ve collaborated with startups, established
-            companies, and entrepreneurs to bring their ideas to life through
-            thoughtful design and development solutions.
+            I&apos;m actively seeking a junior or entry-level role where I can
+            contribute to a real product, learn from experienced teammates
+            and grow fast. I&apos;m ready to hit the ground running.
           </p>
-          {/* TODO: 위 세 단락을 본인의 실제 소개문으로 수정하세요. */}
         </div>
 
         <div className="h-px bg-zinc-100 mb-20" />
@@ -132,7 +121,6 @@ export default function AboutPage() {
         <div className="h-px bg-zinc-100 mb-20" />
 
         {/* ── Tech Stack ──────────────────────────────────────────────── */}
-        {/* skill.md → Tech Stack 섹션 참조 */}
         <div className="mb-20">
           <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 mb-10">
             Tech Stack
@@ -159,7 +147,6 @@ export default function AboutPage() {
         <div className="h-px bg-zinc-100 mb-20" />
 
         {/* ── Education ───────────────────────────────────────────────── */}
-        {/* skill.md → Education & Certifications 참조 */}
         <div className="mb-20">
           <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 mb-10">
             Education & Certifications

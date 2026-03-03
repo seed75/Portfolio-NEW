@@ -7,9 +7,9 @@ import { projects, Category } from "@/data/projects";
 
 const categories: ("All" | Category)[] = [
   "All",
-  "UI/UX Design",
+  "Full-Stack",
   "Frontend Development",
-  "Branding",
+  "AI Tools",
 ];
 
 export default function WorksPage() {
@@ -34,7 +34,8 @@ export default function WorksPage() {
             All projects
           </h1>
           <p className="max-w-md text-base text-zinc-500 leading-relaxed">
-            UI/UX 디자인, 프론트엔드 개발, 브랜딩 전반에 걸친 프로젝트 모음입니다.
+            A collection of projects spanning full-stack development, frontend
+            engineering, and UI/UX design — built to solve real problems.
           </p>
         </div>
 

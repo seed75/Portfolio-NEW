@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
-import Link from "next/link";
 
 // skill.md → Channels 섹션 참조
 const contactInfo = [
@@ -31,7 +30,7 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // TODO: 실제 폼 제출 로직 연결 (Formspree, EmailJS, API Route 등)
     // 예) fetch("/api/contact", { method: "POST", body: JSON.stringify(formData) })
@@ -54,9 +53,8 @@ export default function ContactPage() {
             <em className="font-normal italic text-zinc-400">together</em>
           </h1>
           <p className="max-w-md text-base text-zinc-500 leading-relaxed">
-            새로운 프로젝트, 협업, 또는 궁금한 점이 있으시면 편하게 연락주세요.
-            보통 24시간 이내에 답변드립니다.
-            {/* TODO: 본인 메시지로 수정 */}
+            Whether it&apos;s a job opportunity, a collaboration, or just a question —
+            feel free to reach out. I typically reply within 24 hours.
           </p>
         </div>
 
@@ -95,8 +93,7 @@ export default function ContactPage() {
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                 </span>
                 <span className="text-sm text-zinc-600">
-                  Available for new projects
-                  {/* TODO: 상태에 맞게 변경 */}
+                  Open to Junior / Entry-level Roles
                 </span>
               </div>
             </div>
@@ -110,13 +107,13 @@ export default function ContactPage() {
                   <path d="M3.75 9L7.5 12.75L14.25 5.25" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900">메시지를 받았습니다!</h2>
-              <p className="text-sm text-zinc-500">빠른 시일 내에 답변드릴게요.</p>
+              <h2 className="text-xl font-semibold text-zinc-900">Message received!</h2>
+              <p className="text-sm text-zinc-500">I&apos;ll get back to you as soon as possible.</p>
               <button
                 onClick={() => { setSubmitted(false); setFormData({ name: "", email: "", message: "" }); }}
                 className="mt-2 text-sm font-medium text-zinc-900 underline underline-offset-4 hover:text-zinc-500 transition-colors"
               >
-                다시 보내기
+                Send another
               </button>
             </div>
           ) : (

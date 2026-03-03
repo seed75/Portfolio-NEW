@@ -41,8 +41,9 @@ export default function Contact() {
               </em>
             </h2>
             <p className="text-base text-zinc-400 leading-relaxed">
-              새로운 프로젝트, 협업 제안, 또는 궁금한 점이 있다면 편하게 연락주세요.
-            </p>
+  Whether you&apos;re hiring, collaborating, or just curious
+  about my work — I&apos;d love to hear from you.
+</p>
           </motion.div>
 
           {/* Buttons */}

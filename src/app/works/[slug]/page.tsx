@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import ProjectImageSlider from "@/components/ProjectImageSlider";
 import { projects } from "@/data/projects";
 
 interface Props {
@@ -117,22 +118,31 @@ export default async function ProjectPage({ params }: Props) {
         )}
 
         {/* Project image */}
-        <div className="w-full rounded-2xl bg-zinc-100 aspect-video flex items-center justify-center mb-16">
-          {/*
-            TODO: 프로젝트 이미지 추가 후 아래 주석 해제
-            <Image src={project.image} alt={project.title} fill className="object-cover rounded-2xl" />
-          */}
-          <span className="text-zinc-300 text-sm">프로젝트 이미지</span>
-        </div>
+        <ProjectImageSlider
+          images={project.images ?? [project.image]}
+          title={project.title}
+        />
 
-        {/* TODO: 프로젝트 상세 내용 추가 영역 */}
-        <div className="flex flex-col gap-8 text-zinc-600 leading-relaxed">
-          <div className="h-px bg-zinc-100" />
-          <p className="text-zinc-400 text-sm italic">
-            TODO: 프로젝트 상세 내용을 여기에 작성하세요.
-            (배경, 역할, 해결 과정, 결과 등)
-          </p>
-        </div>
+        {/* Project details */}
+        {project.details && (
+          <div className="flex flex-col gap-10 text-zinc-600 leading-relaxed">
+            <div className="h-px bg-zinc-100" />
+            <div>
+              <h2 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Overview</h2>
+              <p>{project.details.overview}</p>
+            </div>
+            <div className="h-px bg-zinc-100" />
+            <div>
+              <h2 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">What I Built</h2>
+              <p>{project.details.role}</p>
+            </div>
+            <div className="h-px bg-zinc-100" />
+            <div>
+              <h2 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Outcome</h2>
+              <p>{project.details.outcome}</p>
+            </div>
+          </div>
+        )}
 
         {/* Tags */}
         <div className="mt-16 flex flex-wrap gap-2">
